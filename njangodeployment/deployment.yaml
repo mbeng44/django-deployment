@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-deployment
+  name: wordsmith-deployment
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: django
+      app: wordsmith-web
   template:
     metadata:
       labels:
-        app: django
+        app: wordsmith-web
     spec:
       containers:
-      - name: django
-        image: django:onbuild
+      - name: wordsmith-web
+        image: wordsmith-web:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 80
 
