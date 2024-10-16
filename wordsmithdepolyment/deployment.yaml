@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wordsmith-web
-        image: wordsmith-web:latest
+        image: mwene/wordsmith-web:latest
         ports:
         - containerPort: 80
 
