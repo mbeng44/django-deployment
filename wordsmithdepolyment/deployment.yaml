@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordsmith-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: wordsmith-web
+  template:
+    metadata:
+      labels:
+        app: wordsmith-web
+    spec:
+      containers:
+      - name: wordsmith-web
+        image: wordsmith-web:latest
+        ports:
+        - containerPort: 80
+
